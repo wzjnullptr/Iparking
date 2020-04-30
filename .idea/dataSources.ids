@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - parking@localhost" uuid="d8e60f4d-c918-4e4e-9f42-168e8fe0c06a">
+    <database-info product="MySQL" version="5.7.22-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="parking"/>
+    <table name="t_barn" schema="" catalog="parking" type="TABLE">
+      <column name="bid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="gname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="btotal" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="boccupy" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="bappoint" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="bsurplus" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="baddress" sqlType="CHAR" precision="16" scale="0" nullable="false" jdbcType="1"/>
+      <column name="bprice" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="bid"/>
+    </table>
+    <table name="t_card" schema="" catalog="parking" type="TABLE">
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cbalance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cnumber" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="crecord" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="cid"/>
+    </table>
+    <table name="t_cc" schema="" catalog="parking" type="TABLE">
+      <column name="ccid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cctime" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="chstanard" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ccid"/>
+    </table>
+    <table name="t_charges" schema="" catalog="parking" type="TABLE">
+      <column name="chId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="chstanard" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="llimit" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="chId"/>
+    </table>
+    <table name="t_garage" schema="" catalog="parking" type="TABLE">
+      <column name="gid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="gname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="gremark" sqlType="CHAR" precision="8" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="gid"/>
+    </table>
+    <table name="t_icord" schema="" catalog="parking" type="TABLE">
+      <column name="irid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cnumber" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="imoney" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="irid"/>
+    </table>
+    <table name="t_invest" schema="" catalog="parking" type="TABLE">
+      <column name="iid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cnumber" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="imoney" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="iid"/>
+    </table>
+    <table name="t_limit" schema="" catalog="parking" type="TABLE">
+      <column name="lid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="llimit" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="lid"/>
+    </table>
+    <table name="t_master" schema="" catalog="parking" type="TABLE">
+      <column name="mid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="mname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="mpwd" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="mid"/>
+    </table>
+    <table name="t_park" schema="" catalog="parking" type="TABLE">
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pname" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="gname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="pstate" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="pid"/>
+    </table>
+    <table name="t_record" schema="" catalog="parking" type="TABLE">
+      <column name="reid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="gname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="pname" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="canumber" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="sstime" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="setime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="stime" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="smoney" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="spay" sqlType="CHAR" precision="8" scale="0" nullable="true" jdbcType="1"/>
+      <column name="sstate" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="reid"/>
+    </table>
+    <table name="t_rount" schema="" catalog="parking" type="TABLE">
+      <column name="tid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="tremark" sqlType="CHAR" precision="16" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="tid"/>
+    </table>
+    <table name="t_second" schema="" catalog="parking" type="TABLE">
+      <column name="sd" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="gname" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <column name="pname" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="sstime" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="setime" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="stime" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="smoney" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sstate" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="spay" sqlType="CHAR" precision="8" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="sd"/>
+    </table>
+    <table name="t_user" schema="" catalog="parking" type="TABLE">
+      <column name="uid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="uname" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="upwd" sqlType="CHAR" precision="64" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cnumber" sqlType="CHAR" precision="8" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ucall" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="uid"/>
+    </table>
+  </data-source>
+</component>
