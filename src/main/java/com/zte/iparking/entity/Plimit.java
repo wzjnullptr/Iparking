@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Administrator on 2020/4/30 0030.
  */
 
-class Plimit implements Serializable{
+public class Plimit implements Serializable{
     private Integer lid;
     private Integer llimit;
 

@@ -2,6 +2,7 @@ package com.zte.iparking.entity;
 
 import java.io.Serializable;
 
+
 /**
  * Created by wzj on 2020/4/30 0030.
  */
@@ -11,11 +12,29 @@ public class User implements Serializable{
     private String uname;
     private String upwd;
     private Integer uid;
-    private Card card;
+    private Plimit plimit;
     private Integer ucall;
+
+    public Plimit getPlimit() {
+        return plimit;
+    }
+
+    public void setPlimit(Plimit plimit) {
+        this.plimit = plimit;
+    }
+
+    public Integer getUmoney() {
+        return umoney;
+    }
+
+    public void setUmoney(Integer umoney) {
+        this.umoney = umoney;
+    }
+    private Integer umoney;
     public User(){}
 
-    public User(Integer uid,String uname,String upwd,Integer ucall) {
+    public User(Integer uid,String uname,String upwd,Integer ucall,Integer umoney) {
+        this.umoney=umoney;
         this.uname = uname;
         this.upwd = upwd;
         this.uid = uid;
@@ -34,14 +53,6 @@ public class User implements Serializable{
 
     public void setUname(String uname) {
         this.uname = uname;
-    }
-
-    public Card getCard() {
-        return card;
-    }
-
-    public void setCard(Card card) {
-        this.card = card;
     }
 
     public String getUpwd() {
