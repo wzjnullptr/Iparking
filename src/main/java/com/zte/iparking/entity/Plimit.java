@@ -1,14 +1,16 @@
 package com.zte.iparking.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2020/4/30 0030.
  */
 
-class Limit {
+class Plimit implements Serializable{
     private Integer lid;
     private Integer llimit;
 
-    public Limit() {
+    public Plimit() {
     }
 
     public Integer getLid() {
