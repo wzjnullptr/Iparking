@@ -7,7 +7,7 @@ package com.zte.iparking.entity;
 class Charges {
     private Integer chid;
     private  Integer chstanard;
-    private Limit limit;
+    private Plimit plimit;
 
     public Charges() {
     }
@@ -28,11 +28,11 @@ class Charges {
         this.chstanard = chstanard;
     }
 
-    public Limit getLimit() {
-        return limit;
+    public Plimit getPlimit() {
+        return plimit;
     }
 
-    public void setLimit(Limit limit) {
-        this.limit = limit;
+    public void setPlimit(Plimit plimit) {
+        this.plimit = plimit;
     }
 }
