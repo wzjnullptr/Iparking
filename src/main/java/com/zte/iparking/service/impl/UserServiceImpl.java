@@ -1,6 +1,7 @@
 package com.zte.iparking.service.impl;
 
 import com.zte.iparking.dao.UserDao;
+import com.zte.iparking.entity.Plimit;
 import com.zte.iparking.entity.User;
 import com.zte.iparking.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,24 @@ public class UserServiceImpl implements UserService{
     public User checkLogin(String name, String pwd) {
         User user = userDao.selectByName(name);
         // 判断用户名和密码是否正确
-        // System.out.print(user);
-        if (user != null && user.getUpwd()== pwd) {
+        if (user != null && user.getUpwd().equals(pwd)) {
             return user;
         }
         return null;
+    }
+
+    @Override
+    public int regist(String name, String pwd) {
+        User user = new User();
+        user.setUname(name);
+        user.setUpwd(pwd);
+        Plimit plimit=new Plimit();
+        plimit.setLid(1);
+        user.setPlimit(plimit);
+        User check = userDao.selectByName(name);
+        if ( check != null ) {
+            return 0;
+        }
+        return userDao.insert(user);
     }
 }

@@ -1,7 +1,5 @@
 package com.zte.iparking.Test;
 
-import com.sun.org.apache.xalan.internal.utils.XMLSecurityManager;
-import com.sun.scenario.effect.impl.state.HVSeparableKernel;
 import com.zte.iparking.dao.UserDao;
 import com.zte.iparking.entity.Plimit;
 import com.zte.iparking.entity.User;
@@ -22,7 +20,7 @@ class UserTest {
         user1.setPlimit(plimit1);
         user1.setUname("2");
         user1.setUpwd("3");
-        Integer i=123;
+        String i="123";
         user1.setUcall(i);
         user1.setUmoney(0);
         int result1=userDao.insert(user1);

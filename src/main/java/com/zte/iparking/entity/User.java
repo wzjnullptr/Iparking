@@ -13,7 +13,7 @@ public class User implements Serializable{
     private String upwd;
     private Integer uid;
     private Plimit plimit;
-    private Integer ucall;
+    private String ucall;
 
     public Plimit getPlimit() {
         return plimit;
@@ -33,7 +33,7 @@ public class User implements Serializable{
     private Integer umoney;
     public User(){}
 
-    public User(Integer uid,String uname,String upwd,Integer ucall,Integer umoney) {
+    public User(Integer uid,String uname,String upwd,String ucall,Integer umoney) {
         this.umoney=umoney;
         this.uname = uname;
         this.upwd = upwd;
@@ -63,11 +63,11 @@ public class User implements Serializable{
         this.upwd = upwd;
     }
 
-    public Integer getUcall() {
+    public String getUcall() {
         return ucall;
     }
 
-    public void setUcall(Integer ucall) {
+    public void setUcall(String ucall) {
         this.ucall = ucall;
     }
 

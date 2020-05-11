@@ -39,11 +39,10 @@ public class UserController {
         String msg;
         String username = req.getParameter("name");
         String pwd = req.getParameter("pwd");
-//      System.out.print(username);
-//      System.out.print(pwd);
+     // System.out.print(username);
+      //System.out.print(pwd);
         // 获取用户
         User user = userService.checkLogin(username, pwd);
-        // System.out.print(user);
         if (user != null) {
             session.setAttribute("user", user);
             uid = user.getUid();
@@ -62,4 +61,45 @@ public class UserController {
         map.put("msg", msg);
         return JSON.toJSONString(map);
     }
+
+    @RequestMapping("/regist")
+    private String regist() {
+        return "user/regist";
+    }
+
+    @RequestMapping("/regist/do")
+    @ResponseBody
+    private String doRegist(HttpServletRequest req, HttpSession session) {
+        Map map = new HashMap<>(2);
+        int status;
+        String msg;
+        // 获取用户名和密码
+        String name = req.getParameter("name");
+        String pwd = req.getParameter("pwd");
+        if ( name.length() == 0 || pwd.length() == 0  ) {
+            status = 2;
+            msg = "未输入用户名或密码！";
+            map.put("status", status);
+            map.put("msg", msg);
+            return JSON.toJSONString(map);
+        }
+        // 调用Service层进行注册
+        int result = userService.regist(name, pwd);
+        // 用户名已存在
+        if ( result == 0 ) {
+            status = 0;
+            msg = "用户名已存在！";
+            map.put("status", status);
+            map.put("msg", msg);
+            return JSON.toJSONString(map);
+        }
+        User user = userService.findByName(name);
+        session.setAttribute("user", user);
+        status = 1;
+        msg = "注册成功！";
+        map.put("status", status);
+        map.put("msg", msg);
+        return JSON.toJSONString(map);
+    }
+
 }
